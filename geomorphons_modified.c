@@ -2,7 +2,7 @@
 *
 * MODULE:       geomorphons_modified
 *
-* AUTHOR(S):
+* AUTHOR:       Maria Dekavalla
 *
 * PURPOSE:      This program is a modification of the machine-vision technique, called
 *               geomorphons.
@@ -14,10 +14,6 @@
 *               each direction increases until the absolute relief (i.e. absolute difference
 *               between the elevations of the central pixel and the pixel lying at a distance
 *               equal to the scan radius) reaches its maximum value.
-*
-*
-* COPYRIGHT:    (C) 2002,2012 by the GRASS Development Team
-*               (C) Scientific idea of geomorphon copyrighted to Tomasz Stepinski and Jaroslaw Jasiewicz.
 *
 *               This program is free software: you can redistribute it and/or modify
 *               it under the terms of the GNU General Public License as published by
@@ -39,7 +35,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+
+#ifdef USE_OPENMP
 #include <omp.h>
+#endif
 
 #define ABS(a)      ((a) > 0.0 ? (a) : -(a))
 
